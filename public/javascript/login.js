@@ -13,16 +13,17 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-    
+  
         if (response.ok) {
-            document.location.replace('/');
-        } else {
+            document.location.replace('/dashboard/');
+        }
+        else {
             alert(response.statusText);
         }
     }
-}
+};
   
-  async function signupFormHandler(event) {
+async function signupFormHandler(event) {
     event.preventDefault();
   
     const username = document.querySelector('#username-signup').value.trim();
@@ -39,15 +40,15 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-    
+  
         if (response.ok) {
-            document.location.replace('/');
-        } else {
+            document.location.replace('/dashboard/');
+        } 
+        else {
             alert(response.statusText);
         }
     }
 }
   
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-  
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
